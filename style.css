@@ -60,7 +60,7 @@ input, button, textarea {
 }
 
 .Icon {
-    transform: translate(-50%, 5% );
+    transform: translate(-50%, 5%);
 }
 
 /* || General */
@@ -227,6 +227,14 @@ a:active {
 
     .Article__img {
         float: none;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .Icon{
+        display: none;
     }
 
 }
