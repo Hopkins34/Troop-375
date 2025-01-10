@@ -30,4 +30,7 @@ button.addEventListener("click", (event) => {
   console.log(name.value);
   console.log(email.value);
   console.log(message.value);
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("message").value = "";
 });
