@@ -1,17 +1,33 @@
-console.log("hello");
+//To Tob Button
+const TopButton = document.getElementById("ToTop");
 
-// Show button when scrolled down 100px
-
-window.onscroll = () => {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+window.onscroll = function() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     document.getElementById("ToTop").style.display = "block";
   } else {
     document.getElementById("ToTop").style.display = "none";
   }
 };
 
-// Scroll to the top of the page
-
-const scrollToTop = () => {
+function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+TopButton.addEventListener("click", scrollToTop());
+
+//Form
+
+const button = document.getElementById("submit");
+
+button.addEventListener("click", (event) => {
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  event.preventDefault();
+  console.log("Button clicked");
+  console.log(name.value);
+  console.log(email.value);
+  console.log(message.value);
+});
