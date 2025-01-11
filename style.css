@@ -186,13 +186,13 @@ a:active {
 
 .Hero {
     background-color: white;
-    height: 40vh;
+    height: 50vh;
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    background-image: url(Images/Hero.jpg);
+    background-image: url(Images/Hero.png);
 }
 
 .Hero__text {
@@ -204,6 +204,8 @@ a:active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: var(--FCOLOR-LIGHT);
+    border-radius: 20px;
 }
 
 /* || CONTENT */
@@ -268,11 +270,21 @@ a:active {
 
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 540px) {
 
     .Icon{
         display: none;
         visibility: hidden;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .Nav__ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 0.25rem;
     }
 
 }
