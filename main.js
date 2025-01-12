@@ -1,11 +1,11 @@
 //To Tob Button
-const TopButton = document.getElementById("ToTop");
+const TopButton = document.querySelector('#ToTop');
 
-window.onscroll = function() {
+window.onscroll = () =>  {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    document.getElementById("ToTop").style.display = "block";
+    ToTop.style.display = "block";
   } else {
-    document.getElementById("ToTop").style.display = "none";
+    ToTop.style.display = "none";
   }
 };
 
@@ -17,20 +17,51 @@ TopButton.addEventListener("click", scrollToTop());
 
 //Form
 
-const button = document.getElementById("submit");
+const form = document.querySelector("#form");
 
-button.addEventListener("click", (event) => {
+form.addEventListener("submit", e => {
 
-  const name = document.getElementById("name");
-  const email = document.getElementById("email");
-  const message = document.getElementById("message");
+  e.preventDefault();
 
-  event.preventDefault();
-  console.log("Button clicked");
-  console.log(name.value);
-  console.log(email.value);
-  console.log(message.value);
-  document.getElementById("name").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("message").value = "";
+  console.clear();
+  console.log("Name:", form.name.value);
+  console.log("Email:", form.email.value);
+  console.log("Message:", form.message.value);
+
+  document.form.name.value = "";
+  document.form.email.value = "";
+  document.form.message.value = "";
+
+});
+
+form.name.addEventListener('keyup', e => {
+
+  namePattern = /^[A-Za-z]+(?:['-]?[A-Za-z]+)*(?: [A-Za-z]+(?:['-]?[A-Za-z]+)*)*$/
+
+  if(form.name.value == '') {
+    form.name.style.backgroundColor = ''
+  } else {
+    if(namePattern.test(e.target.value)) {
+      form.name.style.backgroundColor = 'lightGreen'
+    } else {
+      form.name.style.backgroundColor = 'coral'
+    }
+  }
+
+});
+
+form.email.addEventListener('keyup', e => {
+
+  emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/
+
+  if (form.email.value == '') {
+    form.email.style.backgroundColor = ''
+  } else {
+    if (emailPattern.test(e.target.value)) {
+      form.email.style.backgroundColor = 'lightGreen'
+    } else {
+      form.email.style.backgroundColor = 'coral'
+    }
+  }
+
 });
