@@ -14,3 +14,14 @@ function scrollToTop() {
 }
 
 TopButton.addEventListener("click", scrollToTop());
+
+const hero = document.querySelector('.Hero');
+const images = ['Hike.png', 'North.png', 'Philmont.jpg', 'Hero.png'];
+let index = 0;
+
+function changeBackground() {
+  index = (index + 1) % images.length;
+  hero.style.backgroundImage = `url(Images/${images[index]})`;
+}
+
+setInterval(changeBackground, 5000);

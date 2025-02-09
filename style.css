@@ -53,6 +53,37 @@ button:hover {
     background-color: #45a049;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.1em;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
 /* || Variables */
 
 :root {
@@ -60,7 +91,7 @@ button:hover {
     /* Fonts */
     --FF: sans-serif;
     --FF-HEADING: 'Poppins', serif;
-    --FS: clamp(1rem, 2vw, 1.75rem);
+    --FS: clamp(1rem, 2vw, 1.5rem);
 
     /* Colors */
 
@@ -147,8 +178,6 @@ a:active {
 /* || HEADER */
 
 .Header {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
     display: flex;
     background-color: var(--HEADER-BGCOLOR);
     position: sticky;
@@ -183,26 +212,14 @@ a:active {
 
 .Hero {
     background-color: white;
-    height: 50vh;
+    height: 40vh;
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     background-image: url(Images/Hero.png);
-}
-
-.Hero__text {
-    background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
-    padding: 1rem 2rem;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--FCOLOR-LIGHT);
-    border-radius: 20px;
+    transition: background-image 1s ease-in-out;
 }
 
 /* || CONTENT */
@@ -245,9 +262,10 @@ a:active {
 /* || FOOTER */
 
 .Footer {
-    position: sticky;
-    bottom: 0;
     background-color: var(--FOOTER-BGCOLOR);
+    position: sticky;
+    width: 100%;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
 }
